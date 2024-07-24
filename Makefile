@@ -4,3 +4,9 @@ Fortran:
 	gfortran -g -c kml_interfaces.f90
 	gfortran -g -c test_kml_glibc.f90
 	gfortran -g -o test_kml_glibc test_kml_glibc.o kml_interfaces.o -L/usr/local/kml/lib -lkm -lm
+test:
+	@make C
+	@./test_kml_glibc
+	@echo "########################################################"
+	@make Fortran
+	@./test_kml_glibc
